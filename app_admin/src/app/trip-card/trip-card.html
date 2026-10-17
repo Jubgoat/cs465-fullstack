@@ -9,8 +9,10 @@
       {{ trip.length }} only {{ trip.perPerson }} per person
     </p>
     <p class="card-text" [innerHTML]="trip.description"></p>
+    @if (authenticationService.isLoggedIn()) {
     <div>
       <button (click)="editTrip(trip)" class="btn btn-info">Edit Trip</button>
     </div>
+  }
   </div>
 </div>

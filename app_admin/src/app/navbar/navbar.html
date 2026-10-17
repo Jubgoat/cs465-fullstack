@@ -1,0 +1,19 @@
+<nav class="navbar navbar-expand navbar-light bg-light">
+  <div class="container-fluid">
+    <a class="navbar-brand" routerLink="/">Travlr Admin</a>
+
+    <div class="navbar-nav">
+      <a class="nav-link" routerLink="/">Trips</a>
+    </div>
+
+    <div class="navbar-nav ms-auto">
+      @if (authenticationService.isLoggedIn()) {
+        <button class="btn btn-link nav-link" type="button" (click)="onLogout()">
+          Log out
+        </button>
+      } @else {
+        <a class="nav-link" routerLink="/login">Log in</a>
+      }
+    </div>
+  </div>
+</nav>
